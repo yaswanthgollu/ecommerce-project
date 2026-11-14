@@ -1,4 +1,4 @@
-import './Checkout.css';
+import './CheckoutPage.css';
 import './checkout-header.css';
 
 export function Checkoutpage() {
