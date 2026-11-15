@@ -12,12 +12,9 @@ export function HomePage() {
         <div className="products-grid">
           {products.map((product) => {
             return (
-              <div key = {product.id} className="product-container">
+              <div key={product.id} className="product-container">
                 <div className="product-image-container">
-                  <img
-                    className="product-image"
-                    src={product.image}
-                  />
+                  <img className="product-image" src={product.image} />
                 </div>
 
                 <div className="product-name limit-text-to-2-lines">
@@ -30,10 +27,14 @@ export function HomePage() {
                     src={`images/ratings/rating-${product.rating.stars * 10}.png`}
                     alt={`${product.rating.stars} stars`}
                   />
-                  <div className="product-rating-count link-primary">{product.rating.count}</div>
+                  <div className="product-rating-count link-primary">
+                    {product.rating.count}
+                  </div>
                 </div>
 
-                <div className="product-price">${(product.priceCents / 100).toFixed(2)}</div>
+                <div className="product-price">
+                  ${(product.priceCents / 100).toFixed(2)}
+                </div>
 
                 <div className="product-quantity-container">
                   <select>
