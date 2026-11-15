@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { Header } from "../components/Header";
 import "./Homepage.css";
 
-export function HomePage() {
+export function HomePage({ cart }) {
 
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  
   // fetch("http://localhost:3000/api/products")
   //   .then((response) => {
   //     return response.json();
@@ -22,10 +22,6 @@ export function HomePage() {
     axios.get("/api/products").then((response) => {
       setProducts(response.data);
     });
-
-    axios.get("/api/cart-items").then((response) => {
-      setCart(response.data);
-    })
   }, []);
   // [] = Dependency Array
   // The empty array as the second argument to useEffect means that the effect will only run once, when the component mounts. If we had passed in a variable or state value, the effect would run again whenever that value changes.
