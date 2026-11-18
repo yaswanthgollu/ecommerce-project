@@ -20,9 +20,12 @@ export function HomePage({ cart }) {
 
   // useEffect -> helps to control when some code runs in a React component. It allows you to perform side effects, such as fetching data from an API, after the component has rendered. In this case, we can use useEffect to fetch the products from the backend when the HomePage component mounts.
   useEffect(() => {
-    axios.get("/api/products").then((response) => {
+    const getHomeData = async () => {
+      const response = await axios.get("/api/products");
       setProducts(response.data);
-    });
+    };
+
+    getHomeData();
   }, []);
   // [] = Dependency Array
   // The empty array as the second argument to useEffect means that the effect will only run once, when the component mounts. If we had passed in a variable or state value, the effect would run again whenever that value changes.
