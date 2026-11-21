@@ -1,15 +1,12 @@
-import axios from "axios";
 import { useState } from "react";
 import { formatMoney } from "../../utils/money.js";
+import { addToCart } from "../../utils/cart.js";
 export function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
-  const addToCart = async () => {
-    await axios.post("/api/cart-items", {
-        productId: product.id,
-        quantity,
-      });
+  const handleAddToCart = async () => {
+      await addToCart(product.id, quantity);
       await loadCart();
       setIsAdded(true);
   };
@@ -67,7 +64,7 @@ export function Product({ product, loadCart }) {
 
       <button
         className="add-to-cart-button button-primary"
-        onClick={addToCart}
+        onClick={handleAddToCart}
       >
         Add to Cart
       </button>
