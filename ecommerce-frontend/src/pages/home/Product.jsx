@@ -3,6 +3,7 @@ import { useState } from "react";
 import { formatMoney } from "../../utils/money.js";
 export function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
+  const [isAdded, setIsAdded] = useState(false);
 
   const addToCart = async () => {
     await axios.post("/api/cart-items", {
@@ -10,6 +11,7 @@ export function Product({ product, loadCart }) {
         quantity,
       });
       await loadCart();
+      setIsAdded(true);
   };
 
   const selectQuantity = (event) => {
@@ -58,7 +60,7 @@ export function Product({ product, loadCart }) {
 
       <div className="product-spacer"></div>
 
-      <div className="added-to-cart">
+      <div className={`added-to-cart ${isAdded ? "added" : ""}`}>
         <img src="images/icons/checkmark.png" />
         Added
       </div>
