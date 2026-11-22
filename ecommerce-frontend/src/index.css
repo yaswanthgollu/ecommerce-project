@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-brand: rgb(91, 75, 219);
+  --color-brand-hover: rgb(75, 61, 190);
+  --color-brand-active: rgb(61, 49, 155);
+  --color-header: rgb(23, 23, 47);
+  --color-search: rgb(255, 181, 71);
+}
+
 body {
-  font-family: Roboto, Arial;
+  font-family: Manrope, Roboto, Arial, sans-serif;
   color: rgb(33, 33, 33);
   /* The <body> element has a default margin of 8px
      on all sides. This removes the default margins. */
@@ -26,7 +36,7 @@ input, select, button {
 
 .button-primary {
   color: rgb(255, 255, 255);
-  background-color: rgb(25, 135, 84);
+  background-color: var(--color-brand);
   border: 1px solid transparent;
   border-radius: 5px;
   cursor: pointer;
@@ -34,12 +44,12 @@ input, select, button {
 }
 
 .button-primary:hover {
-  background-color: rgba(25, 135, 84, 0.75);
+  background-color: var(--color-brand-hover);
   border: 1px solid transparent;
 }
 
 .button-primary:active {
-  background: rgba(25, 135, 84, 0.5);
+  background: var(--color-brand-active);
   border-color: transparent;
   box-shadow: none;
 }
@@ -75,7 +85,7 @@ input, select, button {
 }
 
 .link-primary {
-  color: rgb(25, 135, 84);
+  color: var(--color-brand);
   cursor: pointer;
 }
 
@@ -101,5 +111,5 @@ select {
 
 select:focus,
 input:focus {
-  outline: 2px solid rgb(25, 135, 84);
+  outline: 2px solid var(--color-brand);
 }

@@ -16,5 +16,8 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  build: {
+    outDir: '../ecommerce-backend/dist'
   }
 })

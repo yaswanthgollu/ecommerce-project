@@ -26,13 +26,30 @@
   width: 200px;
 }
 
-.checkout-header .logo {
-  height: 26px;
-  margin-top: 0px;
+.checkout-header .checkout-header-left-section a {
+  text-decoration: none;
 }
 
-.checkout-header .mobile-logo {
-  display: none;
+.checkout-header .checkout-brand-name {
+  color: var(--color-header);
+  display: inline-flex;
+  align-items: baseline;
+  font-family: Manrope, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1.4px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.checkout-header .checkout-brand-name span {
+  color: var(--color-brand);
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-left: 1px;
 }
 
 /* @media is used to create responsive design (making the
@@ -44,13 +61,12 @@
     width: auto;
   }
 
-  .checkout-header .logo {
-    display: none;
+  .checkout-header .checkout-brand-name {
+    font-size: 19px;
   }
 
-  .checkout-header .mobile-logo {
-    display: inline-block;
-    height: 26px;
+  .checkout-header .checkout-brand-name span {
+    font-size: 21px;
   }
 }
 
@@ -67,7 +83,7 @@
 }
 
 .checkout-header .return-to-home-link {
-  color: rgb(25, 135, 84);
+  color: var(--color-brand);
 
   text-decoration: none;
   cursor: pointer;

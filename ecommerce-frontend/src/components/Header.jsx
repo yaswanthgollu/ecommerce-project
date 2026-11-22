@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import "./header.css";
+import "./header1.css";
 export function Header({ cart }) {
   let totalQuantity = 0;
 
@@ -10,8 +10,7 @@ export function Header({ cart }) {
     <div className="header">
       <div className="left-section">
         <Link to="/" className="header-link">
-          <img className="logo" src="images/logo-white.png" />
-          <img className="mobile-logo" src="images/mobile-logo-white.png" />
+          <span className="brand-name">Shop<span>Wise</span></span>
         </Link>
       </div>
 
